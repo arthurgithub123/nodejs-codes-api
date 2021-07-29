@@ -4,5 +4,10 @@
   "host": "localhost",
   "username": "postgres",
   "password": "123456",
-  "database": "CodesApiDatabase"
+  "database": "CodesApiDatabase",
+  "migrations": ["./src/database/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  },
+  "entities": ["./src/models/entities/*.ts"]
 }
