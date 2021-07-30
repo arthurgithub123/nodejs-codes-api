@@ -14,7 +14,16 @@ class User {
   id?: string;
 
   @Column()
-  url: string;
+  name: string;
+
+  @Column()
+  email: string;
+
+  @Column()
+  avatar: string;
+
+  @Column()
+  passwordHash: string;
 
   @CreateDateColumn()
   created_at: Date;
