@@ -21,4 +21,4 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
     : response.status(500).json({ statusCode: 500, message: `Erro interno no servidor - ${err.message}` });
 });
 
-app.listen(3333);
+app.listen(44303, () => console.log('Server is running'));
