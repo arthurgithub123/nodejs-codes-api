@@ -1,11 +1,11 @@
 class GlobalErrorModel {
-  constructor(statusCode = 400, message: string) {
-    this.statusCode = statusCode;
+  constructor(message: string, statusCode = 400) {
     this.message = message;
+    this.statusCode = statusCode;
   }
 
-  public readonly statusCode: number;
   public readonly message: string;
+  public readonly statusCode: number;
 }
 
 export { GlobalErrorModel };
