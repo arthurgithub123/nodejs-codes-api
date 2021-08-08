@@ -1,6 +1,8 @@
 import { v4 as uuidV4 } from 'uuid';
 
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, ManyToMany, PrimaryColumn } from 'typeorm';
+
+import { Role } from './Role';
 
 @Entity('users')
 class User {
@@ -27,6 +29,9 @@ class User {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @ManyToMany(() => Role, role => role.users)
+  roles: Role[];
 }
 
 export { User };
