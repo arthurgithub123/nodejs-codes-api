@@ -13,7 +13,7 @@ class Role {
   }
 
   @PrimaryColumn()
-  id: string;
+  id?: string;
 
   @Column()
   name: string;
