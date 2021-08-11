@@ -31,7 +31,11 @@ class User {
   created_at: Date;
 
   @ManyToMany(() => Role, role => role.users)
-  @JoinTable()
+  @JoinTable({
+    name: "users_roles",
+    joinColumn: { name: "userId", referencedColumnName: "id" },
+    inverseJoinColumn: { name: "roleId", referencedColumnName: "id" }
+  })
   roles: Role[];
 }
 
