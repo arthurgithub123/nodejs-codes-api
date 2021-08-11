@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 
 import { container } from 'tsyringe';
+
 import { CreateUserService } from '../services/CreateUserService';
 
 class CreateUserController {
@@ -13,10 +14,11 @@ class CreateUserController {
     await createUserService.execute({
       name,
       email,
-      password
+      password,
+      role: "User"
     });
 
-    return response.status(201).send();
+    return response.status(201).json({ statusCode: '201', message: 'Usuário criado com sucesso' });
   }
 }
 
