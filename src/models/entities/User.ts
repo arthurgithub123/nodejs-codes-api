@@ -30,7 +30,7 @@ class User {
   @CreateDateColumn()
   created_at: Date;
 
-  @ManyToMany(() => Role, role => role.users)
+  @ManyToMany(() => Role, role => role.users, { eager: true })
   @JoinTable({
     name: "users_roles",
     joinColumn: { name: "userId", referencedColumnName: "id" },
