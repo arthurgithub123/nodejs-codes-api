@@ -1,8 +1,9 @@
 import { v4 as uuidV4 } from 'uuid';
 
-import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, OneToMany, PrimaryColumn } from 'typeorm';
 
 import { Role } from './Role';
+import { UserTokens } from './UserTokens';
 
 @Entity('users')
 class User {
@@ -37,6 +38,9 @@ class User {
     inverseJoinColumn: { name: "roleId", referencedColumnName: "id" }
   })
   roles: Role[];
+
+  @OneToMany(() => UserTokens, userTokens => userTokens.user)
+  tokens: UserTokens[];
 }
 
 export { User };
