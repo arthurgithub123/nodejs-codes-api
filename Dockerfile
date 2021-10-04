@@ -2,9 +2,11 @@ FROM node
 
 WORKDIR /usr/app
 
-COPY . /usr/app
+COPY package.json .
 
 RUN npm install
+
+COPY . .
 
 EXPOSE 44303
 
