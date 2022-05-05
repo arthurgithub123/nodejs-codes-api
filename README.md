@@ -1,6 +1,8 @@
 # nodejs-codes-api
 
-### Features
+###### Nodejs project wich can be used as a 'template' for creating a Nodejs API.
+#
+##### Features
 - [x] Routes
 - [x] Controllers
 - [x] Services
@@ -13,5 +15,5 @@
 - [x] Email sending for an added administrator for password creation
 - [ ] Pagination
 
-### Dependencies in your machine
+##### Dependencies in your machine
 - Nodejs
