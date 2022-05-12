@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-import { GlobalErrorModel } from "../globalErrorHandling/GlobalErrorModel";
+import { GlobalErrorModel } from "../models/GlobalErrorModel";
 
 import { verify } from "jsonwebtoken";
 

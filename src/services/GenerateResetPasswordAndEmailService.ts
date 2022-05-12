@@ -7,7 +7,7 @@ import appsettings from '../../appsettings';
 import { IUsersRepository } from '../repositories/interfaces/IUsersRepository';
 import { IUserTokensRepository } from '../repositories/interfaces/IUserTokensRepository';
 
-import { GlobalErrorModel } from '../globalErrorHandling/GlobalErrorModel';
+import { GlobalErrorModel } from '../models/GlobalErrorModel';
 
 import { v4 as uuidv4 } from 'uuid';
 

@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
 
-import { GlobalErrorModel } from "../globalErrorHandling/GlobalErrorModel";
+import { GlobalErrorModel } from "../models/GlobalErrorModel";
 
 import { IUsersRepository } from "../repositories/interfaces/IUsersRepository";
 

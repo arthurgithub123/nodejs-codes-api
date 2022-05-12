@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 
-import { GlobalErrorModel } from "../globalErrorHandling/GlobalErrorModel";
+import { GlobalErrorModel } from "../models/GlobalErrorModel";
 
 async function AdministratorAuthorizationMiddleware(request: Request, response: Response, next: NextFunction) {
   if(!request.user.role.includes('Administrator')) {

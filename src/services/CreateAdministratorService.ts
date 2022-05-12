@@ -4,7 +4,7 @@ import { IUsersRepository } from "../repositories/interfaces/IUsersRepository";
 import { ICreateUserDTO } from "../models/dtos/ICreateUserDTO";
 import { hash } from "bcryptjs";
 
-import { GlobalErrorModel } from "../globalErrorHandling/GlobalErrorModel";
+import { GlobalErrorModel } from "../models/GlobalErrorModel";
 
 @injectable()
 class CreateAdministratorService {
