@@ -8,17 +8,19 @@ class CreateAdministratorController {
 
   async handle(request: Request, response: Response): Promise<Response> {
     const createAdministratorService = container.resolve(CreateAdministratorService);
-    
-    const { name, email, password } = request.body;
+
+    const { name, email } = request.body;
 
     await createAdministratorService.execute({
       name,
       email,
-      password,
+      password: '',
       role: "Administrator"
     });
 
-    return response.status(201).json({ statusCode: '201', message: 'Administrador criado com sucesso' });
+    return response
+      .status(201)
+      .json({ statusCode: '201', message: 'Administrador criado com sucesso' });
   }
 }
 
