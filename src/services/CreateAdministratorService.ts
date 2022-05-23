@@ -5,6 +5,7 @@ import { ICreateUserDTO } from "../models/dtos/ICreateUserDTO";
 import { hash } from "bcryptjs";
 
 import { GlobalErrorModel } from "../models/GlobalErrorModel";
+import { validateEmail, validateName } from "../shared/utils/UserValidationFunctions";
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -16,6 +17,10 @@ class CreateAdministratorService {
 
   async execute({ name, email, password, role }: ICreateUserDTO): Promise<void> {
     const generateResetPasswordAndEmailService = container.resolve(GenerateResetPasswordAndEmailService);
+
+    validateName(name);
+    
+    validateEmail(email);
 
     const user = await this.usersRepository.findByEmail(email);
 
