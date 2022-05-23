@@ -14,6 +14,7 @@
 - [x] Global Error Handling Middleware
 - [x] Email sending for an added administrator for password creation
 - [ ] Pagination
+- [x] Unit Tests
 
 ##### Dependencies in your machine
 - Nodejs
