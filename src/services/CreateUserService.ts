@@ -5,6 +5,7 @@ import { ICreateUserDTO } from "../models/dtos/ICreateUserDTO";
 import { hash } from "bcryptjs";
 
 import { GlobalErrorModel } from "../models/GlobalErrorModel";
+import { validateEmail, validateName, validatePassword } from "../shared/utils/UserValidationFunctions";
 
 @injectable()
 class CreateUserService {
@@ -16,6 +17,12 @@ class CreateUserService {
     if(user) {
       throw new GlobalErrorModel('Já existe um usuário com esse e-mail');
     }
+
+    validateName(name);
+
+    validateEmail(email);
+
+    validatePassword(password);
 
     const passwordHash = await hash(password, 9);
 
